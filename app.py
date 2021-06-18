@@ -6,9 +6,9 @@ forcastArray = []
 page = requests.get("https://azdeq.gov/PHOENIX/Forecast")
 soup = BeautifulSoup(page.content, 'html.parser')
 
-ozone = soup.select_one('#day2 > div:nth-child(4) > div.display_gauges > div > strong')
-pm10 = soup.select_one('#day2 > div:nth-child(6) > div.display_gauges > div > strong')
-pm25 = soup.select_one('#day2 > div:nth-child(8) > div.display_gauges > div > strong')
+ozone = soup.select_one('#day1 > div:nth-child(4) > div.display_gauges > div > strong')
+pm10 = soup.select_one('#day1 > div:nth-child(6) > div.display_gauges > div > strong')
+pm25 = soup.select_one('#day1 > div:nth-child(8) > div.display_gauges > div > strong')
 forcastTable = soup.select_one('#node-5065 > div > div > div > div > div.divPoll > div')
 updatedAT = soup.select_one('#node-5065 > div > div > div > div > div.submitted')
 highAlert = soup.select_one('#day1 > div.divAlerts > div > div > div.divAlertsCellHPA')
